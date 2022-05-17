@@ -2,8 +2,8 @@ Adding and updating locales
 ---------------------------
 
 For every language you want to translate into you need a
-locales/[language]/LC_MESSAGES/mediarepository.core.po
-(e.g. locales/de/LC_MESSAGES/mediarepository.core.po)
+locales/[language]/LC_MESSAGES/kitconcept.mediarepository.po
+(e.g. locales/de/LC_MESSAGES/kitconcept.mediarepository.po)
 
 For German
 

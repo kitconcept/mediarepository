@@ -6,7 +6,7 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
-import mediarepository.core
+import kitconcept.mediarepository
 
 
 class MEDIAREPOSITORYCORELayer(PloneSandboxLayer):
@@ -20,30 +20,30 @@ class MEDIAREPOSITORYCORELayer(PloneSandboxLayer):
         import plone.restapi
 
         self.loadZCML(package=plone.restapi)
-        self.loadZCML(package=mediarepository.core)
+        self.loadZCML(package=kitconcept.mediarepository)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, "mediarepository.core:default")
+        applyProfile(portal, "kitconcept.mediarepository:default")
 
 
-MEDIAREPOSITORY_CORE_FIXTURE = MEDIAREPOSITORYCORELayer()
+MEDIAREPOSITORY_FIXTURE = MEDIAREPOSITORYCORELayer()
 
 
-MEDIAREPOSITORY_CORE_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(MEDIAREPOSITORY_CORE_FIXTURE,),
+MEDIAREPOSITORY_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(MEDIAREPOSITORY_FIXTURE,),
     name="MEDIAREPOSITORYCORELayer:IntegrationTesting",
 )
 
 
-MEDIAREPOSITORY_CORE_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(MEDIAREPOSITORY_CORE_FIXTURE, WSGI_SERVER_FIXTURE),
+MEDIAREPOSITORY_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(MEDIAREPOSITORY_FIXTURE, WSGI_SERVER_FIXTURE),
     name="MEDIAREPOSITORYCORELayer:FunctionalTesting",
 )
 
 
-MEDIAREPOSITORY_COREACCEPTANCE_TESTING = FunctionalTesting(
+MEDIAREPOSITORYACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        MEDIAREPOSITORY_CORE_FIXTURE,
+        MEDIAREPOSITORY_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         WSGI_SERVER_FIXTURE,
     ),

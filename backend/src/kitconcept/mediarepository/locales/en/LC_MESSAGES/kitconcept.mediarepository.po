@@ -1,6 +1,3 @@
-#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-#SOME DESCRIPTIVE TITLE.
-#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,32 +12,32 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: mediarepository.core\n"
+"Domain: DOMAIN\n"
 
-#: mediarepository/core/profiles/default/types/Media_Repository.xml
+#: kitconcept/mediarepository/profiles/default/types/Media_Repository.xml
 msgid "Edit"
 msgstr ""
 
-#: mediarepository/core/profiles.zcml:14
+#: kitconcept/mediarepository/profiles.zcml:14
 msgid "Installs the Media Repository add-on."
 msgstr ""
 
-#: mediarepository/core/profiles/default/types/Media_Repository.xml
+#: kitconcept/mediarepository/profiles/default/types/Media_Repository.xml
 msgid "Media Repository"
 msgstr ""
 
-#: mediarepository/core/profiles.zcml:14
+#: kitconcept/mediarepository/profiles.zcml:14
 msgid "Media Repository for Plone"
 msgstr ""
 
-#: mediarepository/core/profiles.zcml:23
+#: kitconcept/mediarepository/profiles.zcml:23
 msgid "Media Repository for Plone: uninstall"
 msgstr ""
 
-#: mediarepository/core/profiles.zcml:23
+#: kitconcept/mediarepository/profiles.zcml:23
 msgid "Uninstalls the Media Repository add-on."
 msgstr ""
 
-#: mediarepository/core/profiles/default/types/Media_Repository.xml
+#: kitconcept/mediarepository/profiles/default/types/Media_Repository.xml
 msgid "View"
 msgstr ""

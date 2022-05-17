@@ -22,7 +22,7 @@ BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 CODE_QUALITY_VERSION=1.0.1
 LINT=docker run --rm -v "${BACKEND_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} check
 
-PACKAGE_NAME=mediarepository.core
+PACKAGE_NAME=kitconcept.mediarepository
 PACKAGE_PATH=src/
 CHECK_PATH=setup.py $(PACKAGE_PATH)
 

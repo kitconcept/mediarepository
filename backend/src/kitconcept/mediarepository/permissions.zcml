@@ -1,14 +1,14 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="mediarepository.core"
+    i18n_domain="kitconcept.mediarepository"
     >
 
   <configure zcml:condition="installed AccessControl.security">
 
     <permission
-        id="mediarepository.core.addMediaRepository"
-        title="mediarepository.core: Add Media Repository"
+        id="kitconcept.mediarepository.addMediaRepository"
+        title="kitconcept.mediarepository: Add Media Repository"
         />
 
   </configure>

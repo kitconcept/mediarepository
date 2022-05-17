@@ -5,14 +5,14 @@ from zope.interface import implementer
 import logging
 
 
-logger = logging.getLogger("mediarepository.core.setuphandlers")
+logger = logging.getLogger("kitconcept.mediarepository.setuphandlers")
 
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation."""
-        return ["mediarepository.core:uninstall"]
+        return ["kitconcept.mediarepository:uninstall"]
 
 
 def uninstall(context):

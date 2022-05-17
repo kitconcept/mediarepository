@@ -11,7 +11,7 @@ logger.setLevel(logging.DEBUG)
 
 
 PATTERN = r"^[a-z]{2}.*"
-domain = "mediarepository.core"
+domain = "kitconcept.mediarepository"
 cwd = Path.cwd()
 target_path = Path(__file__).parent.parent.resolve()
 locale_path = target_path / "locales"

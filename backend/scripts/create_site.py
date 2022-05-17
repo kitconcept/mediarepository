@@ -1,5 +1,5 @@
 from AccessControl.SecurityManagement import newSecurityManager
-from mediarepository.core.interfaces import IMediaRepositoryLayer
+from kitconcept.mediarepository.interfaces import IMediaRepositoryLayer
 from Products.CMFPlone.factory import _DEFAULT_PROFILE
 from Products.CMFPlone.factory import addPloneSite
 from Testing.makerequest import makerequest
@@ -48,7 +48,7 @@ payload = {
     "extension_ids": [
         "plonetheme.barceloneta:default",
         "plone.volto:default",
-        "mediarepository.core:default",
+        "kitconcept.mediarepository:default",
     ],
     "setup_content": False,
     "default_language": "de",

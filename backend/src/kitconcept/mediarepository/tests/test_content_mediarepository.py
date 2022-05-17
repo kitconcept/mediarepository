@@ -1,6 +1,6 @@
 from kitconcept import api
-from mediarepository.core.content.mediarepository import IMediaRepository
-from mediarepository.core.testing import MEDIAREPOSITORY_CORE_INTEGRATION_TESTING
+from kitconcept.mediarepository.content.mediarepository import IMediaRepository
+from kitconcept.mediarepository.testing import MEDIAREPOSITORY_INTEGRATION_TESTING
 from zope.component import createObject
 
 import unittest
@@ -8,7 +8,7 @@ import unittest
 
 class MediaRepositoryIntegrationTest(unittest.TestCase):
 
-    layer = MEDIAREPOSITORY_CORE_INTEGRATION_TESTING
+    layer = MEDIAREPOSITORY_INTEGRATION_TESTING
 
     portal_type = "Media Repository"
 

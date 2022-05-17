@@ -2,7 +2,7 @@
   <permissions>
 
     <permission acquire="False"
-                name="mediarepository.core: Add Media Repository"
+                name="kitconcept.mediarepository: Add Media Repository"
     >
       <role name="Site Administrator" />
       <role name="Manager" />

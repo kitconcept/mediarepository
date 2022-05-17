@@ -1,4 +1,4 @@
-"""Installer for the mediarepository.core package."""
+"""Installer for the kitconcept.mediarepository package."""
 
 from setuptools import setup
 
