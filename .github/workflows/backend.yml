@@ -1,0 +1,115 @@
+name: Backend
+on:
+  push:
+    paths:
+      - "backend/**"
+
+env:
+  python-version: 3.9
+  plone-version: "6.0.0a4"
+
+jobs:
+  black:
+    name: Black
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: plone/code-analysis-action@v1
+        with:
+          base_dir: 'backend'
+          check: 'black'
+          path: |
+            src
+            setup.py
+
+  flake8:
+    name: flake8
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: plone/code-analysis-action@v1
+        with:
+          base_dir: 'backend'
+          check: 'flake8'
+          path: |
+            src
+            setup.py
+
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: plone/code-analysis-action@v1
+        with:
+          base_dir: 'backend'
+          check: 'isort'
+          path: |
+            src
+            setup.py
+
+  pyroma:
+    name: pyroma
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: plone/code-analysis-action@v1
+        with:
+          check: 'pyroma'
+          path: |
+            backend
+
+  zpretty:
+    name: zpretty
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Run check
+        uses: plone/code-analysis-action@v1
+        with:
+          base_dir: 'backend'
+          check: 'zpretty'
+          path: |
+            src
+
+  tests:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Plone ${{ matrix.plone }} with Python ${{ matrix.python }}
+        uses: plone/setup-plone@v1.0.0
+        with:
+          python-version: ${{ env.python-version }}
+          plone-version: ${{ env.plone-version }}
+
+      - name: Install package
+        run: |
+          pip install "plone.app.testing" -c https://dist.plone.org/release/${{ env.plone-version }}/constraints.txt
+          pip install -e ".[test]"
+
+      - name: Run tests
+        run: |
+          PYTHONWARNINGS=ignore zope-testrunner --auto-color --auto-progress --test-path src/
