@@ -1,9 +1,13 @@
 """Update locales."""
-from os import curdir
 from pathlib import Path
 
+import logging
 import re
 import subprocess
+
+
+logger = logging.getLogger("i18n")
+logger.setLevel(logging.DEBUG)
 
 
 PATTERN = r"^[a-z]{2}.*"
@@ -69,4 +73,4 @@ def update_locale():
         _sync()
         _rebuild()
     else:
-        print("Not able to find i18ndude")
+        logger.error("Not able to find i18ndude")
