@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="mediarepository.core"
+    >
+
+  <configure zcml:condition="installed AccessControl.security">
+
+    <permission
+        id="mediarepository.core.addMediaRepository"
+        title="mediarepository.core: Add Media Repository"
+        />
+
+  </configure>
+
+</configure>

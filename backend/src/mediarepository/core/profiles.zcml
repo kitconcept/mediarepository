@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="mediarepository.core"
+    >
+  <genericsetup:registerProfile
+      name="default"
+      title="Media Repository for Plone"
+      description="Installs the Media Repository add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Media Repository for Plone: uninstall"
+      description="Uninstalls the Media Repository add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <!-- Upgrade Steps -->
+  <include package=".upgrades" />
+
+  <!-- Hide Profiles -->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="mediarepository.core-hiddenprofiles"
+      />
+</configure>

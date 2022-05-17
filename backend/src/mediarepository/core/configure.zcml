@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="mediarepository.core"
+    >
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include package="plone.restapi" />
+  <include package="plone.volto" />
+
+  <!-- Generic Setup Profiles-->
+  <include file="permissions.zcml" />
+
+  <!-- Generic Setup Profiles-->
+  <include file="profiles.zcml" />
+
+</configure>

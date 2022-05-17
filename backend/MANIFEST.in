@@ -1,0 +1,4 @@
+graft src/mediarepository
+include *.cfg
+include *.rst
+global-exclude *.pyc
